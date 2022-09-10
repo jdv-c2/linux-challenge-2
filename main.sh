@@ -29,27 +29,7 @@ main()
    # Mission 1
    mkdir -p /home/tutor/dir1/dir2 2>/dev/null
    echo "cd /home/tutor/dir1/dir2/" >> /home/tutor/.bashrc
-   cat << EOF > /home/tutor/dir1/dir2/ReadMe 
-
-     #####
-    #### _\_  ________
-    ##=-[.].]| \      \ 
-    #(    _\ |  |------|
-     #   __| |  ||||||||    
-      \  _/  |  ||||||||  Great work connecting to my machine!     
-   .--'--'-. |  | ____ |  
-  '   _     .|__|[o__o]|  I am your tutor on this journey.
-_{____nm_________/____\____ 
-
-You are two directories deep inside of my home folder.
-You can find the full path or absolute path of your 
-location with the 'pwd' command.
-
-Navigate to the start of my home folder 
-Type 'cd ~' or just 'cd'. 
-Read the instructions over there (ReadMe file)
-
-EOF
+   mv ~/instruction-1 /home/tutor/dir1/dir2/ReadMe
 
    # Mission 2
    cat << EOF > /home/tutor/ReadMe
