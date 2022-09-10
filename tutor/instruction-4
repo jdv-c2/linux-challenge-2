@@ -1,0 +1,28 @@
+
+     #####
+    #### _\_  ________
+    ##=-[.].]| \      \ 
+    #(    _\ |  |------|
+     #   __| |  ||||||||    
+      \  _/  |  ||||||||      
+   .--'--'-. |  | ____ |     We are in the /etc directory!
+  '   _     .|__|[o__o]|     
+_{____nm_________/____\____ 
+
+In /etc you typically find machine configuration files.
+
+Examples of machine configurations are: network interfaces,
+dns configuration, user and groups, scheduled tasks and more.
+
+In this directory you can also find important variables set.
+For example you can find values on the distribution in 
+the file: lsb-release. 
+
+As you can see, the release of our machine is Ubuntu 18.04 
+with codename: bionic.   
+
+The attackers have added their own variable to the 
+lsb-release file: CIRCUS_INFECTED.   
+
+What value is set for this variable?
+

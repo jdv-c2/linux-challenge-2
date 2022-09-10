@@ -1,0 +1,20 @@
+
+  #####
+ #### _\_  
+ ##=-[.].]
+ #(    _\ 
+  #   __|  You are getting good at this!
+   \  _/    
+.--'--'-.    
+
+You are now at the very root of the Linux file system. 
+Everything starts from here.
+
+From here you can find important machine folders like:
+/bin, /boot, /etc, /home, /mnt, /proc, /root and /tmp
+
+Read about the Filesystem Hierarchy Standard (FHS) online.
+There is one directory that doesn't belong here.
+
+What is the name of this directory? 
+

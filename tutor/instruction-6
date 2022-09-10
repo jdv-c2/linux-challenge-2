@@ -1,0 +1,23 @@
+
+     #####
+    #### _\_  ________
+    ##=-[.].]| \      \
+    #(    _\ |  |------|
+     #   __| |  ||||||||    
+      \  _/  |  ||||||||  Great, you are in /tmp!     
+   .--'--'-. |  | ____ |  
+  '   _     .|__|[o__o]|  Let's investigate this place.
+_{____nm_________/____\____ 
+
+The /tmp directory is a place where all users can create 
+temporary files and that is usually cleared at boot time.
+
+It is a common place for attackers to place malicious code.
+
+Remember Jenny whose account was maybe compromised? 
+
+Can you find a file, owned by Jenny, with source code 
+of our suspicious program?
+
+What is the name of this file?
+
