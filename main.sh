@@ -29,7 +29,7 @@ main()
    # Mission 1
    mkdir -p /home/tutor/dir1/dir2 2>/dev/null
    echo "cd /home/tutor/dir1/dir2/" >> /home/tutor/.bashrc
-   mv ~/tutor/instruction-1 /home/tutor/dir1/dir2/ReadMe
+   mv tutor/instruction-1 /home/tutor/dir1/dir2/ReadMe
 
    # Mission 2
    cat << EOF > /home/tutor/ReadMe
