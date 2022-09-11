@@ -14,6 +14,6 @@ int main(int argc, char *argv[])
       printf("Wrong lockcode. Please try again.\n");
    } else {
       setuid(0);
-      system("cat /usr/share/.linux-adventures/.ascii/released-elephant; rm -rf /mystery; cd /");      
+      system("cat /usr/share/.linux-adventures/.ascii/released-elephant; rm -rf /mystery; mkdir /birthday; chown circus_c:circus_c /birthday");      
    }
 }
