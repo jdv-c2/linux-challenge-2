@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Provisioner script for second Linux adventures campaign
-# Author: Jonathan Ben Ilan 
+# Author: Johan de Vries 
 
 set -e
 
@@ -30,64 +30,12 @@ main()
 
    # Mission 1
    mv tutor/instruction-1 /home/tutor/ReadMe 
-   mv tutor/instruction-1 /home/tutor/exercise-1.txt 
+   mv tutor/exercise-1 /home/tutor/exercise-1.txt 
    echo "372C71E854C1394B599923E428FC5" > /home/tutor/this-is-your-key;
    chown -R tutor:tutor /home/tutor;
    chmod 400 /home/tutor/this-is-your-key;
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-1
-       _______________
-      |####|     |####|    Congratulations!
-      |####|  B  |####|
-      |####|  A  |####|    You have been awarded the badge:
-      {####|  D  |####}    
-       {###|  G  |###}     --- command-runner --- 
-        {##|  E  |##}
-         .#|_____|#.
-             (%)
-          .-'''''-.         
-        .'  * ` *  `.     
-       :  *       *  :     
-      : ~           ~ :    Now go on and complete the other
-      : ~           ~ :    exercises in this directory...
-       :  *       *  :
-        `.  * . *  .`      
-          `-.....-`                                 
-
-Next exercise: ~/exercise-2.txt
-
-EOF
-
-    cat << "EOF" > runme.c
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-#define PATH "/usr/share/.linux-adventures/"
-
-int system(const char *command);
-
-int main(int argc, char *argv[])
-{ 
-   FILE *file; 
-   char str[30];
-   if (argc != 4 || strcmp(argv[1], "-p") || !(file = fopen(argv[3], "r"))) {
-      printf("Usage: %s -p password keyfile\n", argv[0]); 
-      return(1);
-   } else if (strcmp(argv[2], "cyber123@#")) {
-      printf("Wrong password. Please try again.\n");
-      return(2);
-   } else if (fgets(str,30,file) == NULL || str == "372C71E854C1394B599923E428FC5") {
-      printf("Wrong keyfile. Please try again.\n");  
-      return(3);
-   } else {
-      system("cp -r " PATH ".exercises/* .;cat " PATH ".ascii/badge-1");      
-      return(0);
-   }
-}
-EOF
-
-   gcc runme.c -o /bin/runme
+   mv badge/badge-1 /usr/share/.linux-adventures/.ascii/badge-1
+   gcc c/runme.c -o /bin/runme
 
    # Mission 2  
 
@@ -290,7 +238,7 @@ EOF
           `-.....-`                  
 
 
-Next exercise: ~/exercise-5.txt
+You have completed all exercises!
 
 EOF
 
@@ -298,155 +246,7 @@ EOF
    do 
       sed -n $((1 + $i*4)),$((4 + $i * 4))p $advpath.ascii/badge-4 > $advpath.exercises/dir-1/file-$((1 + $i))0.txt;
    done 
-   
-   # Mission 5 and 6
-   mkdir $advpath.exercises/dir-3/{delete-me,rename-me} 2> /dev/null;
-   echo "Copy me into sandbox" >>  $advpath.exercises/dir-3/copy-me;
-
-   cat << "EOF" > /usr/share/.linux-adventures/.exercises/exercise-5.txt 
-   
-     #####
-    #### _\_  ________
-    ##=-[.].]| \      \ 
-    #(    _\ |  |------|
-     #   __| |  ||||||||    
-      \  _/  |  ||||||||  Almost there!
-   .--'--'-. |  | ____ |  
-  '   _     .|__|[o__o]|  This is your last exercise for today. 
-_{____nm_________/____\____ 
-
-The { } (curly braces) are not globbing wildcards for pattern matching, 
-but are used to create patterns. This is also called "brace expansion".
-The command line will "expand" the given range "as if typed" on the cli.  
-   - c{a,e,u}t wil become: cat cet cut
-   - cmd-{1..4} will become: cmd-1 cmd-2 cmd-3 cmd-4
-
-This can be useful for creating multiple files (or other objects) at once
-and saves you a lot of time!
-
-Let's try it when working with files and folders. 
-
-Accomplish the following tasks in dir-3:
-   - Remove the directory delete-me
-   - Rename the directory rename-me to sandbox
-   - Copy the file copy-me to sandbox (without renaming)
-   - In sandbox create dir-1, dir-2 ... until dir-50   
-   - In each directory create file-1.txt, file-2.txt ... until file-5.txt 
-
-Be very careful to name the objects exactly as above (including the 
-dashes -). Use brace expansion to accomplish the last two tasks fast.
-
-When you have finished all the tasks in dir-3, you'll get your fifth badge
-and you assigment: ~/assignment.txt
-
-EOF
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/assignment.txt 
-   
-     #####
-    #### _\_  ________
-    ##=-[.].]| \      \ 
-    #(    _\ |  |------|
-     #   __| |  ||||||||    
-      \  _/  |  ||||||||  Amazing!
-   .--'--'-. |  | ____ |  
-  '   _     .|__|[o__o]|  You have received all badges.. 
-_{____nm_________/____\____ 
-
-Now it is time for your next assignment...
-
-As we know, our filesystem was infected by malware, causing strange
-artifacts to be found on our filesystem.
-
-Our threat intelligence department has identified the hacker group
-known as: "Circus Cyber". This is a notorious group of script kiddies 
-targeting filesystems mainly for fun. If you solve their riddles, you
-can remove the malicious objects from the filesystem.. 
-
-Their first riddle can be found in the directory /mystery that they 
-have placed at the root of the filesystem. 
-
-We have granted you access to the /mystery directory in order to solve 
-the mystery and remove the directory from our filesystem.
-
-Your ticketnumber: d8dcc2235 
-
-Good luck! 
-
-EOF
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-5 
-       _______________
-      |####|     |####|    Congratulations!
-      |####|  B  |####|
-      |####|  A  |####|    You have been awarded the badge:
-      {####|  D  |####}                
-       {###|  G  |###}        --- sandbox-warrior ---               
-        {##|  E  |##}                      
-         .#|_____|#.                 
-          .-'''''-.                  
-        .'  - ` -  `.                
-       :  -       -  :               
-      : ~           ~ :              
-      : ~           ~ :              
-       :  *       *  :               
-        `.  * . *  .`                
-          `-.....-`                  
-
-
-Read your assignment: ~/assignment.txt
-
-EOF
-   
-   cat << "EOF" > /usr/share/.linux-adventures/.cron/mission-5.sh
-str="/home/tutor/dir-3/";
-
-check_task5(){
-   arr=(${str}sandbox/*/*)
-   arr_c=(${str}sandbox/dir-{1..50}/file-{1..5}.txt)
-   IFS=$'\n'; 
-   arr_c=($(sort <<<"${arr_c[*]}"));
-   unset IFS;
-   if [ "${arr[*]}" == "${arr_c[*]}" ]; then
-       cp /usr/share/.linux-adventures/.ascii/badge-5 /home/tutor; 
-       cp /usr/share/.linux-adventures/.ascii/assignment.txt /home/tutor; 
-   fi
-}
-
-check_task4(){
-   arr=(${str}sandbox/*)
-   arr_c=(${str}sandbox/{copy-me,dir-{1..50}});  
-   # Sort array in place
-   IFS=$'\n'; 
-   arr_c=($(sort <<<"${arr_c[*]}"));
-   unset IFS;
-   if [ "${arr[*]}" == "${arr_c[*]}" ]; then
-       check_task5; 
-   fi
-}
-
-check_task123() {
-   if [ ! -d ${str}delete-me ] && [ -d ${str}sandbox ]  && [ ! -d ${str}rename-me ]  && [ -f ${str}sandbox/copy-me ] ; then
-      check_task4;
-   fi
-}
-
-if [ ! -f ${str}badge-5 ]; then 
-   check_task123; 
-fi
-EOF
-
-   cat << "EOF" >> /usr/share/.linux-adventures/.cron/mission-5-root.sh 
-str="/home/tutor/dir-3/";
-
-if [ ! -f ${str}badge-5 ]; then 
-   chmod 775 /mystery;     
-fi
-EOF
-
-   echo "* * * * *   tutor /bin/bash /usr/share/.linux-adventures/.cron/mission-5.sh" > /etc/cron.d/mission-5;
-   echo "* * * * *   root /bin/bash /usr/share/.linux-adventures/.cron/mission-5-root.sh" >> /etc/cron.d/mission-5;
-
+  
    # ---> Target 2 <---
    mkdir -p /mystery/box-{0..41} 2> /dev/null;   
 
@@ -498,8 +298,8 @@ EOF
                                                                                   
    Our jugglers have accidentally mixed up all our boxes. 
 
-   You can only find one of our clowns in box-0. He has an important message
-   for you! Output "all the parts" from box-0 to meet the clown.        
+   You can find one of our clowns in box-0. He has an important message
+   for you! So output "all the parts" from box-0 to meet him.        
 
 EOF
 
