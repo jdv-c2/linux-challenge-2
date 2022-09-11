@@ -1,0 +1,24 @@
+   
+  #####
+ #### _\_  
+ ##=-[.].]
+ #(    _\ 
+  #   __|     Good progress! Here is exercise 4.
+   \  _/    
+.--'--'-.    
+
+There are also one-character wildcards to match filenames:
+   - The ? (question mark) matches any character but only one time.
+   - The [ ] (square brackets) matches a range of characters one time.
+     For example: m[a,o,u]m matches mam, mom, mum 
+     or a range:  car-[1-4] matches car-1, car-2, car-3 and car-4.   
+
+Go ahead! Cat out each tenth file from dir-1. 
+  - file-10.txt
+  - file-20.txt
+  - file-30.txt
+  - file-40.txt
+  - file-50.txt
+
+Use one-character wildcards to accomplish this fast. Good luck! 
+

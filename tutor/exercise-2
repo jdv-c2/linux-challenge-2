@@ -1,0 +1,24 @@
+
+  #####
+ #### _\_  
+ ##=-[.].]
+ #(    _\ 
+  #   __|     Great work! Here is your next exercise.
+   \  _/    
+.--'--'-.    
+
+As you know, the 'cat' command lets you display the contents of a file.
+But it can also output the contents of multiple files at once.
+That's why the name of the command is taken from the word 'concatenate'.
+
+The cat command can take in multiple arguments. Let's see how it works.
+
+Cat out the following files from dir-1: 
+   - file-2.txt
+   - file-7.txt
+   - file-22.txt
+   - file-35.txt
+   - file-41.txt
+
+But do it in one command, with multiple arguments.
+

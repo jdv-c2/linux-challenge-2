@@ -27,7 +27,6 @@ main()
    mkdir -p $advpath.cron 2> /dev/null 
  
    # ---> Target 1 <---
-
    # Mission 1
    mv tutor/instruction-1 /home/tutor/ReadMe 
    mv tutor/exercise-1 /home/tutor/exercise-1.txt 
@@ -38,7 +37,6 @@ main()
    gcc c/runme.c -o /bin/runme
 
    # Mission 2  
-
    # Creating noise
    fnstr="$advpath.exercises/dir-1/file-" 
    for i in {1..50}; do
@@ -51,55 +49,8 @@ main()
       printf "\n" >> $fnstr${i}0.txt;
    done
 
-   cat << "EOF" > /usr/share/.linux-adventures/.exercises/exercise-2.txt
-
-  #####
- #### _\_  
- ##=-[.].]
- #(    _\ 
-  #   __|     Great work! Here is your next exercise.
-   \  _/    
-.--'--'-.    
-
-As you know, the 'cat' command lets you display the contents of a file.
-But it can also output the contents of multiple files at once.
-That's why the name of the command is taken from the word 'concatenate'.
-
-The cat command can take in multiple arguments. Let's see how it works.
-
-Cat out the following files from dir-1: 
-   - file-2.txt
-   - file-7.txt
-   - file-22.txt
-   - file-35.txt
-   - file-41.txt
-
-But do it in one command, with multiple arguments.
-
-EOF
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-2
-       _______________
-      |####|     |####|    Congratulations!
-      |####|  B  |####|
-      |####|  A  |####|    You have been awarded the badge:
-      {####|  D  |####}              +     +  
-       {###|  G  |###}               |  c  | 
-        {##|  E  |##}                |  a  |
-         .#|_____|#.                 |  t  |
-          .-'''''-.                  |  -  |
-        .'  - ` -  `.                |  m  | 
-       :  -       -  :               |  a  |
-      : ~           ~ :              |  s  | 
-      : ~           ~ :              |  t  | 
-       :  *       *  :               |  e  |
-        `.  * . *  .`                |  r  | 
-          `-.....-`                  +     +
-
-
-Next exercise: ~/exercise-3.txt
-
-EOF
+   mv tutor/exercise-2 /usr/share/.linux-adventures/.exercises/exercise-2.txt
+   mv badge/badge-2 /usr/share/.linux-adventures/.ascii/badge-2
 
    file_list=(file-{2,7,22,35,41}.txt)
    for i in {0..4};  
@@ -108,77 +59,8 @@ EOF
    done 
 
    # Mission 3   
-   cat << "EOF" > /usr/share/.linux-adventures/.exercises/exercise-3.txt
-
-  #####
- #### _\_  
- ##=-[.].]
- #(    _\ 
-  #   __|     Amazing! Ready for exercise 3?
-   \  _/    
-.--'--'-.    
-
-The 'cat' command can receive a lot of arguments to concatenate files.
-Likewise, many other commands on the CLI can take in more than one file. 
-
-But writing down long lists of arguments can sometimes be tedious.
-
-That's why Linux has powerfull wildcards that saves you time typing.     
-They are called 'globs'. 
-
-Let's start with the most powerfull of them.
-
-The * wildcard is a placeholder for: "any character any number of times". 
-That's basically saying "match me everything". 
-
-Let's try it! Cat out "all the files" from dir-2.  
-
-Use the * to accomplish this fast. Good luck!
-
-EOF
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-3
-                                                  .. 
-      --- Twinkle, Twinkle                       .##. 
-                                                .####%                   
-                   Linux Star ---               $#####'                  
-                                               ?#######^                 
-                                     :%%%%%%%%#########&%%%%%%%%?        
-                                     ^##########################%.       
-                                       }%####################&$~         
-                                 .~}$%^  ^%&################?:           
-                             :'%%&#####%^  ^###############.             
-                         :'$#&##########^  }###############'             
-                     .~}%&#############}  ~#######&#&#######.            
-                  .'$##################  .######$'. :?%&####$            
-               .'$####################%  :%&#$'.       :?%&&%            
-             ^%#####################&%~    ..             ..             
-          .}%######################}:                                    
-        :}#######################?.                          
-      :%&#####################&}.                            
-    :%&######################%:     Congratulations!                                        
-  .}&######################%~                                                               
- '#######################&?         You have been awarded the badge:                        
-?#####%#################%:                                                     
-~%%}^  '##############&}            _______________                                         
-     :$##############%^            |####|     |####|     +     +                                   
-    }###############%              |####|  B  |####|     |  r  |                  
-  :%##############&'               |####|  A  |####|     |  i  |                        
-  :%##%%$$########^                {####|  D  |####}     |  s  |                        
-          :#####$.                  {###|  G  |###}      |  i  |  
-          ^&###}                     {##|  E  |##}       |  n  |
-          $###}                       .#|_____|#.        |  g  |
-         .###'                         .-'''''-.         |  -  |
-          :^.                        .'  - ` -  `.       |  s  |
-           .                        :  -       -  :      |  t  |
-                                   : ~           ~ :     |  a  |
-                                   : ~           ~ :     |  r  |
-                                    :  *       *  :      |     |
-                                     `.  * . *  .`       +     +
-                                       `-.....-`                 
-Next exercise: ~/exercise-4.txt
-
-EOF
+   mv tutor/exercise-3 /usr/share/.linux-adventures/.exercises/exercise-3.txt
+   mv badge/badge-3 /usr/share/.linux-adventures/.ascii/badge-3
 
    # This creates an alphabetically ordered list of numbers 
    j=({0..40});  
@@ -192,55 +74,8 @@ EOF
    done 
   
    # Mission 4
-   cat << "EOF" > /usr/share/.linux-adventures/.exercises/exercise-4.txt
-   
-  #####
- #### _\_  
- ##=-[.].]
- #(    _\ 
-  #   __|     Good progress! Here is exercise 4.
-   \  _/    
-.--'--'-.    
-
-There are also one-character wildcards to match filenames:
-   - The ? (question mark) matches any character but only one time.
-   - The [ ] (square brackets) matches a range of characters one time.
-     For example: m[a,o,u]m matches mam, mom, mum 
-     or a range:  car-[1-4] matches car-1, car-2, car-3 and car-4.   
-
-Go ahead! Cat out each tenth file from dir-1. 
-  - file-10.txt
-  - file-20.txt
-  - file-30.txt
-  - file-40.txt
-  - file-50.txt
-
-Use one-character wildcards to accomplish this fast. Good luck! 
-
-EOF
-
-   cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-4 
-       _______________
-      |####|     |####|    Congratulations!
-      |####|  B  |####|
-      |####|  A  |####|    You have been awarded the badge:
-      {####|  D  |####}                
-       {###|  G  |###}        --- globbing-               
-        {##|  E  |##}                     wizard --- 
-         .#|_____|#.                 
-          .-'''''-.                  
-        .'  - ` -  `.                
-       :  -       -  :               
-      : ~           ~ :              
-      : ~           ~ :              
-       :  *       *  :               
-        `.  * . *  .`                
-          `-.....-`                  
-
-
-You have completed all exercises!
-
-EOF
+   mv tutor/exercise-4 /usr/share/.linux-adventures/.exercises/exercise-4.txt
+   mv badge/badge-4  /usr/share/.linux-adventures/.ascii/badge-4 
 
    for i in {0..4};  
    do 
@@ -251,7 +86,6 @@ EOF
    mkdir -p /mystery/box-{0..41} 2> /dev/null;   
 
    # Creating noise
-   
    for i in {0..41}; do
       for k in {1..40}; do 
          cat /dev/urandom | tr -dc '[:graph:]' | fold -b80 | dd of=/mystery/box-${i}/part-${k}.txt bs=80 count=4 &> /dev/null;

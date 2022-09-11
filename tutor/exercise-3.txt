@@ -1,0 +1,26 @@
+
+  #####
+ #### _\_  
+ ##=-[.].]
+ #(    _\ 
+  #   __|     Amazing! Ready for exercise 3?
+   \  _/    
+.--'--'-.    
+
+The 'cat' command can receive a lot of arguments to concatenate files.
+Likewise, many other commands on the CLI can take in more than one file. 
+
+But writing down long lists of arguments can sometimes be tedious.
+
+That's why Linux has powerfull wildcards that saves you time typing.     
+They are called 'globs'. 
+
+Let's start with the most powerfull of them.
+
+The * wildcard is a placeholder for: "any character any number of times". 
+That's basically saying "match me everything". 
+
+Let's try it! Cat out "all the files" from dir-2.  
+
+Use the * to accomplish this fast. Good luck!
+
