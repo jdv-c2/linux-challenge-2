@@ -17,8 +17,7 @@ main()
    mkdir -p /mystery 2>/dev/null
 
    # Application
-   # TODO remove purge of man-db 
-   apt update && apt remove -y --purge man-db && apt install -y gcc  
+   apt update && apt install -y gcc figlet 
   
    # Create directory in /usr/share/
    advpath="/usr/share/.linux-adventures/"    
@@ -30,56 +29,11 @@ main()
    # ---> Target 1 <---
 
    # Mission 1
-   cat << "EOF" > /home/tutor/ReadMe 
-
-     #####
-    #### _\_  ________
-    ##=-[.].]| \      \ 
-    #(    _\ |  |------|
-     #   __| |  ||||||||    
-      \  _/  |  ||||||||  Welcome back!
-   .--'--'-. |  | ____ |  
-  '   _     .|__|[o__o]|  Ready to learn more about Linux?
-_{____nm_________/____\____ 
-
-Today, you will get your second assignment as a cyber professional.
-
-But first, I want you to practice a little with:
-   - running commands on the command line
-   - using wildcards
-   - working with files and folders.
- 
-Read file exercise-1.txt to start your first exercise. 
-
-After you have completed all five exercises, you are ready for 
-today's assigment. Good luck!
-
-EOF
-   
-   cat << "EOF" > /home/tutor/exercise-1.txt 
-Every command on the command line has more or less the same
-structure. It goes like this: 
-
-COMMAND [OPTIONS] [ARGUMENTS]
-
-The COMMAND is the name of the program.
-
-OPTIONS are used to change or expand the command functionality.  
-They typically start with a dash - (flags) or double dashes --. 
-
-ARGUMENTS are typically filenames or other data that are feeded to the 
-command (or to one of its options). 
-
-On this machine, there is a command called 'runme'. 
-Run the command and find out how it works. 
-
-Your password is: "cyber123@#"
-
-EOF
-
-echo "372C71E854C1394B599923E428FC5" > /home/tutor/this-is-your-key;
-chown -R tutor:tutor /home/tutor;
-chmod 400 /home/tutor/this-is-your-key;
+   mv tutor/instruction-1 /home/tutor/ReadMe 
+   mv tutor/instruction-1 /home/tutor/exercise-1.txt 
+   echo "372C71E854C1394B599923E428FC5" > /home/tutor/this-is-your-key;
+   chown -R tutor:tutor /home/tutor;
+   chmod 400 /home/tutor/this-is-your-key;
 
    cat << "EOF" > /usr/share/.linux-adventures/.ascii/badge-1
        _______________

@@ -1,0 +1,18 @@
+Every command on the command line has more or less the same
+structure. It goes like this: 
+
+COMMAND [OPTIONS] [ARGUMENTS]
+
+The COMMAND is the name of the program.
+
+OPTIONS are used to change or expand the command functionality.  
+They typically start with a dash - (flags) or double dashes --. 
+
+ARGUMENTS are typically filenames or other data that are feeded to the 
+command (or to one of its options). 
+
+On this machine, there is a command called 'runme'. 
+Run the command and find out how it works. 
+
+Your password is: "cyber123@#"
+
