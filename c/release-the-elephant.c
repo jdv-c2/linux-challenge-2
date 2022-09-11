@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
    } else if (strcmp(argv[2], "348731")) {
       printf("Wrong lockcode. Please try again.\n");
    } else {
+      setuid(0);
       system("cat /usr/share/.linux-adventures/.ascii/released-elephant; chmod 777 /mystery");      
    }
 }
