@@ -103,7 +103,7 @@ main()
    done 
 
    # Mission 2
-   mv ascii/rabbit usr/share/.linux-adventures/.ascii/rabbit
+   mv ascii/rabbit /usr/share/.linux-adventures/.ascii/rabbit
     
    for i in {1..40}; 
    do 
