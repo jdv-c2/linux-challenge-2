@@ -2,7 +2,7 @@
 
 Provisioner script:
 
-``sh
+```sh
 #!/bin/bash
 
 set -e 
